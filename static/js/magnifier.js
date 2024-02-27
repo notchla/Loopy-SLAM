@@ -14,7 +14,6 @@ function imageZoom(imgID, resultIDs, n_images) {
     img.parentElement.insertBefore(lens, img);
 
     let index = document.getElementById(imgID).getAttribute("src").split("/").at(-1).split(".")[0]
-    console.log(index)
     
     /* Get zoom in image id*/
     var res = []
@@ -25,7 +24,6 @@ function imageZoom(imgID, resultIDs, n_images) {
         cx = res.at(-1).offsetWidth / lens.offsetWidth;
         cy = res.at(-1).offsetHeight / lens.offsetHeight;
 
-        console.log("url('" + res.at(-1).dataset.image + (index).slice(-3) + ".png')")
         /* Set background properties for the result DIV */
         res.at(-1).style.backgroundImage = "url('" + res.at(-1).dataset.image + (index).slice(-3) + ".png')";
         res.at(-1).style.backgroundSize = img.width * cx  + "px " + img.height * cy + "px";
